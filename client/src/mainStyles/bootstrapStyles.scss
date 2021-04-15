@@ -1,0 +1,39 @@
+// ***** MODIFICAR AQUÍ LAS VARIABLES DE BOOTSTRAP
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 400px,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1280px
+) !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 720px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1920px
+) !default;
+
+$carousel-control-color: black;
+$carousel-control-opacity: .1;
+$carousel-control-hover-opacity: .5;
+$carousel-control-width: 15%;
+
+.carousel-inner {
+  
+  //max-width: 1170px;
+  margin: 0 auto;
+  //border-radius: 10px;
+}
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
