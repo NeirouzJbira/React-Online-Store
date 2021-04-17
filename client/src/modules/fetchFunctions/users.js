@@ -1,255 +1,244 @@
-import Config from '../../../config';
+import Config from "../../../config";
 
 const apiUrl = Config.URL.apiURL;
 
-
 const fetchGetLoginUser = async () => {
+  const path = Config.ROUTES.USER.GET_Login;
 
-	const path = Config.ROUTES.USER.GET_Login;
+  const options = {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+  };
 
-	const options = {
-		method: 'GET',
-		credentials: 'include',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		mode: 'cors'
-	};
+  const response = await fetch(apiUrl + path, options);
 
-	const response = await fetch(apiUrl + path, options);		
-		
-	if (response.ok) {
+  if (response.ok) {
+    return await response.json();
+  }
 
-		return await response.json();
-
-	}
-
-	throw new Error(`Error status: ${response.status}. There was a problem fetching data.`);
+  throw new Error(
+    `Error status: ${response.status}. There was a problem fetching data.`
+  );
 };
-
 
 const fetchGetLogoutUser = async () => {
+  const path = Config.ROUTES.USER.GET_Logout;
 
-	const path = Config.ROUTES.USER.GET_Logout;
+  const options = {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+  };
 
-	const options = {
-		method: 'GET',
-		credentials: 'include',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		mode: 'cors'
-	};
+  const response = await fetch(apiUrl + path, options);
 
-	const response = await fetch(apiUrl + path, options);
+  if (response.ok) {
+    return await response.json();
+  }
 
-	if (response.ok) {
-
-		return await response.json();
-
-	}
-
-	throw new Error(`Error status: ${response.status}. There was a problem fetching data.`);
+  throw new Error(
+    `Error status: ${response.status}. There was a problem fetching data.`
+  );
 };
-
 
 const fetchPostLoginUser = async (username, password) => {
-	
-	const path = Config.ROUTES.USER.POST_Login;
-	
-	const data = {
-		username,
-		password
-	};
+  const path = Config.ROUTES.USER.POST_Login;
 
-	const options = {
-		method: 'POST',
-		credentials: 'include',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		mode: 'cors'
-	};
+  const data = {
+    username,
+    password,
+  };
 
-	const response = await fetch(apiUrl + path, options);		
-		
-	if (response.ok) {
+  const options = {
+    method: "POST",
+    credentials: "include",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+  };
 
-		return await response.json();
+  const response = await fetch(apiUrl + path, options);
 
-	}
+  if (response.ok) {
+    return await response.json();
+  }
 
-	throw new Error(`Error status: ${response.status}. There was a problem fetching data.`);
-
+  throw new Error(
+    `Error status: ${response.status}. There was a problem fetching data.`
+  );
 };
 
-const fetchPostRegisterUser = async (username, password, firstname, lastname, email) => {
-	
-	const path = Config.ROUTES.USER.POST_Register;
-	
-	const data = {
-		username,
-		password,
-		firstname,
-		lastname,
-		email
-	};
+const fetchPostRegisterUser = async (
+  username,
+  password,
+  firstname,
+  lastname,
+  email
+) => {
+  const path = Config.ROUTES.USER.POST_Register;
 
-	const options = {
-		method: 'POST',
-		credentials: 'include',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		mode: 'cors'
-	};
-	
-	const response = await fetch(apiUrl + path, options);		
-		
-	if (response.ok) {
+  const data = {
+    username,
+    password,
+    firstname,
+    lastname,
+    email,
+  };
 
-		return await response.json();
+  const options = {
+    method: "POST",
+    credentials: "include",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+  };
 
-	}
+  const response = await fetch(apiUrl + path, options);
 
-	throw new Error(`Error status: ${response.status}. There was a problem fetching data.`);
-	
+  if (response.ok) {
+    return await response.json();
+  }
+
+  throw new Error(
+    `Error status: ${response.status}. There was a problem fetching data.`
+  );
 };
 
 const fetchPostValidateUser = async (userId, token) => {
+  const path = Config.ROUTES.USER.POST_Validate;
 
-	const path = Config.ROUTES.USER.POST_Validate;
-	
-	const data = {
-		id: userId,
-		token
-	};
+  const data = {
+    id: userId,
+    token,
+  };
 
-	const options = {
-		method: 'POST',
-		credentials: 'include',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		mode: 'cors'
-	};
+  const options = {
+    method: "POST",
+    credentials: "include",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+  };
 
-	const response = await fetch(apiUrl + path, options);		
-		
-	if (response.ok) {
+  const response = await fetch(apiUrl + path, options);
 
-		return await response.json();
+  if (response.ok) {
+    return await response.json();
+  }
 
-	}
-
-	throw new Error(`Error status: ${response.status}. There was a problem fetching data.`);
-
+  throw new Error(
+    `Error status: ${response.status}. There was a problem fetching data.`
+  );
 };
 
 const fetchPostForgotPasswordUser = async (username) => {
+  const path = Config.ROUTES.USER.POST_ForgotPassword;
 
-	const path = Config.ROUTES.USER.POST_ForgotPassword;
-	
-	const data = {
-		username
-	};
+  const data = {
+    username,
+  };
 
-	const options = {
-		method: 'POST',
-		credentials: 'include',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		mode: 'cors'
-	};
+  const options = {
+    method: "POST",
+    credentials: "include",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+  };
 
-	const response = await fetch(apiUrl + path, options);		
-		
-	if (response.ok) {
+  const response = await fetch(apiUrl + path, options);
 
-		return await response.json();
+  if (response.ok) {
+    return await response.json();
+  }
 
-	}
-
-	throw new Error(`Error status: ${response.status}. There was a problem fetching data.`);
-
+  throw new Error(
+    `Error status: ${response.status}. There was a problem fetching data.`
+  );
 };
 
 const fetchPostResetPasswordUser = async (userId, token, newPassword) => {
+  const path = Config.ROUTES.USER.POST_ResetPassword;
 
-	const path = Config.ROUTES.USER.POST_ResetPassword;
-	
-	const data = {
-		id: userId,
-		token,
-		password: newPassword
-	};
+  const data = {
+    id: userId,
+    token,
+    password: newPassword,
+  };
 
-	const options = {
-		method: 'POST',
-		credentials: 'include',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		mode: 'cors'
-	};
+  const options = {
+    method: "POST",
+    credentials: "include",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+  };
 
-	const response = await fetch(apiUrl + path, options);		
-		
-	if (response.ok) {
+  const response = await fetch(apiUrl + path, options);
 
-		return await response.json();
+  if (response.ok) {
+    return await response.json();
+  }
 
-	}
-
-	throw new Error(`Error status: ${response.status}. There was a problem fetching data.`);
-
+  throw new Error(
+    `Error status: ${response.status}. There was a problem fetching data.`
+  );
 };
 
 const fetchPostPasswordChange = async (username, password, newPassword) => {
+  const path = Config.ROUTES.USER.POST_PasswordChange;
 
-	const path = Config.ROUTES.USER.POST_PasswordChange;
-	
-	const data = {
-		username,
-		password,
-		newPassword
-	};
+  const data = {
+    username,
+    password,
+    newPassword,
+  };
 
-	const options = {
-		method: 'POST',
-		credentials: 'include',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		mode: 'cors'
-	};
+  const options = {
+    method: "POST",
+    credentials: "include",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+  };
 
-	const response = await fetch(apiUrl + path, options);		
-		
-	if (response.ok) {
+  const response = await fetch(apiUrl + path, options);
 
-		return await response.json();
+  if (response.ok) {
+    return await response.json();
+  }
 
-	}
-
-	throw new Error(`Error status: ${response.status}. There was a problem fetching data.`);
-
+  throw new Error(
+    `Error status: ${response.status}. There was a problem fetching data.`
+  );
 };
 
 export {
-	fetchGetLoginUser,
-	fetchGetLogoutUser,
-	fetchPostLoginUser,
-	fetchPostForgotPasswordUser,
-	fetchPostPasswordChange,
-	fetchPostRegisterUser,
-	fetchPostResetPasswordUser,
-	fetchPostValidateUser
+  fetchGetLoginUser,
+  fetchGetLogoutUser,
+  fetchPostLoginUser,
+  fetchPostForgotPasswordUser,
+  fetchPostPasswordChange,
+  fetchPostRegisterUser,
+  fetchPostResetPasswordUser,
+  fetchPostValidateUser,
 };
