@@ -1,0 +1,26 @@
+@import '../../mainStyles//globalVariables.scss';
+
+.item-info1-container {
+	background: rgba(0,0,0,.5);
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	
+}
+
+.item-info1-caption {
+	font-family: 'Rubik', Verdana, Geneva, Tahoma, sans-serif;
+	@include fontSize(1.1);
+	color: $Yellow-Crazy;
+	text-align: center;
+	line-height: 18px;
+}
+
+.item-info1-button {
+	@extend %quick-look-button;
+}
