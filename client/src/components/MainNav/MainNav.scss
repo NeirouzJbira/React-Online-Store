@@ -1,0 +1,168 @@
+@import '../../mainStyles/globalVariables.scss';
+
+#main-nav-container {
+	display: block;
+	width: 100%;
+	padding: 0;
+	
+	@include forSmallScreens(570) {
+
+		display: none;
+	}
+}
+
+
+#header-main-nav-list {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-end;
+	padding: 0;
+	margin: 0;	
+		
+	@include fontSize(1.4);
+	
+	
+	li {
+		padding: 2px 10px;
+		margin-right: 15px;
+
+		@include forSmallScreens(880) {
+
+			@include fontSize(1.2);
+			padding: 2px 2px;
+			
+		}
+
+		@include forSmallScreens(790) {
+			
+			padding: 2px 0;
+			margin-right: 5px;
+		}
+
+		@include forSmallScreens(630) {
+
+			@include fontSize(1.1);			
+			
+		}
+				
+		a {
+			color:lighten($LightBlue,10%);
+			display: inline-block;
+			text-decoration: none;
+			transition: all .3s ease;
+			
+		}
+
+		a:hover {
+			color: $Yellow-Crazy;			
+
+		}
+	}
+}
+
+.icon-main-nav {
+	margin-right: 5px;
+
+	color:lightgray;
+
+	@include forSmallScreens(740) {
+
+		margin-right: 2px;
+
+	}
+}
+
+.main-nav-active {
+	color: $Yellow-Crazy;	
+}
+
+
+#main-nav-button {
+
+	display: none;
+
+	@include forSmallScreens(570) {
+
+		display: block;
+		padding: 2px;
+		margin: 10px 0 10px 0;
+		
+		border: none;
+		color: $LightBlue;
+		background: transparent;
+		border-radius: 3px;
+		width: 60px;
+		@include fontSize(1.8);
+
+		&:hover {
+			background-color: lighten($Blue-Base, 20%);
+		}
+
+		&:active {
+			background-color: lighten($Blue-Base, 20%);
+		}
+
+		&:focus {
+			outline: 0;
+		}
+
+	}
+	
+}
+
+
+.mobil-main-nav-list {   // initial styles of the animation (transition)
+	display: flex;
+	flex-flow: column nowrap;
+	
+	
+	li {
+		list-style-type: none;
+		width: 100%;	
+		padding: 3px 5px;
+		
+		a {
+			display: block;
+			text-decoration: none;	
+			color: white;
+			transition: all .3s linear;
+		}
+
+		a:hover {
+
+			background-color: lighten($Blue-Base, 20%);
+
+		}
+
+		a:active {
+
+			background-color: lighten($Blue-Base, 20%);
+
+		}
+	}	
+
+}
+
+.mobil-main-nav-enter {
+	height: 0;
+	overflow: hidden;	
+}
+
+.mobil-main-nav-enter-active {
+	height: 90px;	
+	transition: height .3s linear;
+}
+
+.mobil-main-nav-exit {
+	height: 90px;
+	
+}
+
+.mobil-main-nav-exit-active {
+	height: 0;
+	overflow: hidden;
+	transition: height .3s linear;	
+}
+
+
