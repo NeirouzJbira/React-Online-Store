@@ -1,0 +1,113 @@
+@import '../../mainStyles/globalVariables.scss';
+
+#user-nav-container {
+	@include forSmallScreens(570) {
+
+		display: none;
+	}
+}
+
+#header-user-nav-list {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row nowrap;
+	line-height: 1.5rem;
+		
+	@include fontSize(1.2);
+	
+	li {
+		padding: 3px 3px;
+		margin-right: 15px;
+		
+		@include forSmallScreens(1340) {
+
+			@include fontSize(1.2);
+			padding: 3px 0;
+		}
+
+		@include forSmallScreens(1240) {
+			
+			margin-right: 10px;
+		}
+
+		a {
+			color: $Purple-Clear;
+			display: inline-block;
+			text-decoration: none;
+			transition: all .2s linear;
+			//text-shadow: $Light-Header-Text-Shadow;
+			letter-spacing: $mainSpacing1;
+			
+			@include forSmallScreens(1240) {
+
+				letter-spacing: 1px;
+
+			}
+		}
+
+		a:hover {
+			color: $Yellow-Crazy;			
+			text-shadow: none;
+		}
+
+
+		@include forSmallScreens(570) {
+
+			display: none;
+		}
+
+	}
+}
+
+.icon-user-nav {
+	margin-left: 7px;
+}
+
+.mobil-user-nav-list {   // initial styles of the animation (transition)
+	display: none;
+
+	@include forSmallScreens(570) {
+		width: 100%;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;		
+		padding: 0;
+
+		li {
+			list-style-type: none;
+			width: 16.66%;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			transition: all .3s linear;
+			border-radius: 5px;	
+			padding: 5px;
+
+			&:hover {
+				color: $Yellow-Crazy;	
+				background-color: lighten($Blue-Base, 15%);
+			}
+
+			img {
+
+				max-width: 30px;
+				margin-bottom: 5px;				
+			}
+			
+			a {
+				display: block;
+				text-decoration: none;	
+				color: lighten($Purple-Clear,5%);							
+				letter-spacing: 0;
+				@include fontSize(1.6);				
+			}
+			
+		}	
+	
+
+
+	}
+
+}
+
