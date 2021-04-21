@@ -1,19 +1,15 @@
-@import '../../mainStyles/globalVariables.scss';
-
+@import "../../mainStyles/globalVariables.scss";
 
 #header-search-container {
-	margin: 0;
-	margin-bottom: 10px;
-	//box-shadow: $Light-Header-Box-Shadow;
-	border-radius: 5px;
-	
-
+  margin: 0;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 #input-search {
-	font-size: 1.8rem;
+  font-size: 1.8rem;
 
-	@include forSmallScreens(570) {
-		font-size: 2rem;
-	}
+  @include forSmallScreens(570) {
+    font-size: 2rem;
+  }
 }
