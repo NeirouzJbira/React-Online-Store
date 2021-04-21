@@ -1,0 +1,33 @@
+@import "../../mainStyles//globalVariables.scss";
+
+#season-items-container {
+  background: white;
+  grid-area: season;
+  min-width: 300px;
+  max-height: 320px;
+
+  h6 {
+    margin: 0;
+    padding: 20px 0 0 20px;
+    a {
+      text-decoration: none;
+      font-family: "Lilita One";
+      @include fontSize(2);
+      color: white;
+      text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+      transition: all 0.2s linear;
+      letter-spacing: 1px;
+    }
+
+    a:hover {
+      color: darken($Purple-Clear, 10%);
+    }
+  }
+}
+
+.season-item {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
