@@ -1,14 +1,11 @@
-@import '../../../mainStyles/globalVariables.scss';
-
+@import "../../../mainStyles/globalVariables.scss";
 
 #items-added-to-cart-table {
-
-	@include fontSize(1.1);
-	width: 85%;
-	margin-top: 20px;
-
+  @include fontSize(1.1);
+  width: 85%;
+  margin-top: 20px;
 }
 
 .table-cell-center {
-	text-align: center;
+  text-align: center;
 }
